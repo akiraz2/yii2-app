@@ -24,7 +24,7 @@ return [
             'class' => 'yii\console\controllers\MigrateController',
             //'migrationPath' => null,
             'migrationNamespaces' => [
-                // ...
+                'console\migrations',
                 'yii\queue\db\migrations',
             ],
         ],

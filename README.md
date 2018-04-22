@@ -1,6 +1,6 @@
 # Yii2 App
 
-Yii2-app is my advanced project template.
+Yii2-app is Fast and Ready-to-production advanced project template.
 
 Default, the template includes three tiers: `frontend`, `backend`, and `console`, each of which is a separate Yii application.
 > **NOTE:** Template is in initial development. Anything may change at any time. 
@@ -29,7 +29,7 @@ After installation run `init`
 
 ### Migrations
 
-Make sure that you have properly configured `db` application component and run the following command
+> **NOTE:** Make sure that you have properly configured `db` application component and run the following command
 
 ```
 php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
