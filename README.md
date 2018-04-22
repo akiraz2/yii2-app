@@ -20,6 +20,16 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
 * **postcss** config
 
 
+## Available modules
+These modules can be easy installed to Yii2-App using Composer:
+
+* Yii2 Super Blog Module (semantic, seo): [akiraz2/yii2-blog](https://github.com/akiraz2/yii2-blog)
+* Yii2 many web-statictic counters *(yandex, google, own db-counter)*: [akiraz2/yii2-stat](https://github.com/akiraz2/yii2-stat)
+* yii2 opengraph component: [dragonjet/yii2-opengraph](https://github.com/dragonjet/yii2-opengraph)
+* yii2 settings (db+cache): [yii2mod/yii2-settings](https://github.com/yii2mod/yii2-settings)
+* etc...
+
+
 ## Installation
 Yii2-app template can be installed using composer. Run following command to download and install Yii2-app:
 ```
