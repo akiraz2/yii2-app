@@ -1,0 +1,42 @@
+{
+    "name": "akiraz2/yii2-app",
+    "description": "Yii2 my advanced project template (Redis-cache, DB-queue, gentelella-admin, dektrium-user, DB-log)",
+    "keywords": ["yii2", "framework", "advanced", "project template"],
+    "homepage": "https://github.com/akiraz2/yii2-app",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "source": "https://github.com/akiraz2/yii2-app"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+        "dektrium/yii2-user": "dev-master",
+        "yiister/yii2-gentelella": "~1.0",
+        "yiisoft/yii2-redis": "^2.0",
+        "yiisoft/yii2-queue": "^2.0",
+        "himiklab/yii2-recaptcha-widget": "^1.2"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
