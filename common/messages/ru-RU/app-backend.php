@@ -17,6 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Delete' => 'Удалить',
-    'Update' => 'Обновить',
+    'Admin' => 'Административное',
+    'Dashboard' => 'Панель управления',
+    'General' => 'Главное',
+    'Guest' => 'Гость',
+    'Welcome' => 'Привет',
 ];

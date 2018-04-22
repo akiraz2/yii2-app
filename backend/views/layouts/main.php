@@ -47,8 +47,8 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                         <img src="/img/128x128.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2><?= Yii::$app->user->identity->username; ?></h2>
+                        <span><?= \Yii::t('app-backend', 'Welcome');?>,</span>
+                        <h2><?= (Yii::$app->user->isGuest)? \Yii::t('app-backend', 'Guest'):Yii::$app->user->identity->username; ?></h2>
                     </div>
                 </div>
                 <!-- /menu prile quick info -->
@@ -59,69 +59,23 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                     <div class="menu_section">
-                        <h3>General</h3>
+                        <h3><?= \Yii::t('app-backend', 'General');?></h3>
                         <?=
                         \yiister\gentelella\widgets\Menu::widget(
                             [
                                 "items" => [
-                                    ["label" => "Home", "url" => "/", "icon" => "home"],
-                                    ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
-                                    ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
+                                    ["label" => \Yii::t('app-backend', 'Dashboard'), "url" => "/", "icon" => "home"],
+                                    ["label" => \Yii::t('app-model', 'Users'), "url" => ["/user/admin"], "icon" => "users"],
+                                    ["label" => \Yii::t('app-model', 'Email Form'), "url" => ["/email-form/index"], "icon" => "envelope"],
                                     [
-                                        "label" => "Widgets",
-                                        "icon" => "th",
+                                        "label" => \Yii::t('app-backend', 'Admin'),
                                         "url" => "#",
-                                        "items" => [
-                                            ["label" => "Menu", "url" => ["site/menu"]],
-                                            ["label" => "Panel", "url" => ["site/panel"]],
-                                        ],
-                                    ],
-                                    [
-                                        "label" => "Badges",
-                                        "url" => "#",
-                                        "icon" => "table",
+                                        "icon" => "cog",
                                         "items" => [
                                             [
-                                                "label" => "Default",
-                                                "url" => "#",
-                                                "badge" => "123",
-                                            ],
-                                            [
-                                                "label" => "Success",
-                                                "url" => "#",
-                                                "badge" => "new",
-                                                "badgeOptions" => ["class" => "label-success"],
-                                            ],
-                                            [
-                                                "label" => "Danger",
-                                                "url" => "#",
-                                                "badge" => "!",
-                                                "badgeOptions" => ["class" => "label-danger"],
-                                            ],
-                                        ],
-                                    ],
-                                    [
-                                        "label" => "Multilevel",
-                                        "url" => "#",
-                                        "icon" => "table",
-                                        "items" => [
-                                            [
-                                                "label" => "Second level 1",
-                                                "url" => "#",
-                                            ],
-                                            [
-                                                "label" => "Second level 2",
-                                                "url" => "#",
-                                                "items" => [
-                                                    [
-                                                        "label" => "Third level 1",
-                                                        "url" => "#",
-                                                    ],
-                                                    [
-                                                        "label" => "Third level 2",
-                                                        "url" => "#",
-                                                    ],
-                                                ],
+                                                "label" => \Yii::t('app-model', 'Log'),
+                                                "url" => ['/log/index'],
+                                                "icon" => "bug",
                                             ],
                                         ],
                                     ],
@@ -166,22 +120,17 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="/img/128x128.png" alt=""><?= Yii::$app->user->identity->username; ?>
+                                <img src="/img/128x128.png" alt=""><?= (Yii::$app->user->isGuest)? \Yii::t('app-backend', 'Guest'):Yii::$app->user->identity->username; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;"> Profile</a>
+                                <li><a href="/user/admin/update-profile?id=1"><?= \Yii::t('app-model', 'Profile');?></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
+                                    <a href="/user/security/logout" data-method="post">
+                                        <i class="fa fa-sign-out pull-right"></i>
+                                        <?= \Yii::t('app-model', 'Log out');?>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">Help</a>
-                                </li>
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                 </li>
                             </ul>
                         </li>
@@ -195,44 +144,16 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image"/>
-                                    </span>
+                                        <span class="image">
+                                            <img src="http://placehold.it/128x128" alt="Profile Image"/>
+                                        </span>
                                         <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
+                                            <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
                                         <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image"/>
-                                    </span>
-                                        <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                                        <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image"/>
-                                    </span>
-                                        <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                                        <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
+                                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                                        </span>
                                     </a>
                                 </li>
                                 <li>

@@ -17,6 +17,12 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Delete' => 'Удалить',
-    'Update' => 'Обновить',
+    'Email Form' => 'Email Form',
+    'Log' => 'Лог',
+    'Log out' => 'Выход',
+    'Message' => 'Сообщение',
+    'Phone' => 'Телефон',
+    'Profile' => 'Профиль',
+    'Users' => 'Пользователи',
+    'Verification Code' => 'Код верификации',
 ];
