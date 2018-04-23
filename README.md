@@ -44,6 +44,7 @@ After installation run `init`
 ```
 php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
 php yii migrate --migrationPath=@yii/log/migrations/
+php yii migrate --migrationPath=vendor/ignatenkovnikita/yii2-queuemanager/migrations/
 php yii migrate/up
 ```
 
