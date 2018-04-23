@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Queue Manager' => 'Менеджер очереди',
     'Email Form' => 'Email Form',
     'Log' => 'Лог',
     'Log out' => 'Выход',

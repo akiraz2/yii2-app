@@ -22,6 +22,9 @@ return [
                 ],
             ],
         ],
+        'queuemanager' => [
+            'class' => \ignatenkovnikita\queuemanager\QueueManager::class
+        ]
     ],
     'components' => [
         'request' => [

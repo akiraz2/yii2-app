@@ -18,7 +18,9 @@
         "yiister/yii2-gentelella": "~1.0",
         "yiisoft/yii2-redis": "^2.0",
         "yiisoft/yii2-queue": "^2.0",
-        "himiklab/yii2-recaptcha-widget": "^1.2"
+        "himiklab/yii2-recaptcha-widget": "^1.2",
+        "ignatenkovnikita/yii2-queuemanager": "dev-master",
+        "yiisoft/yii2-jui": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

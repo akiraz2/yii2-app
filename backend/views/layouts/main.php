@@ -77,6 +77,11 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                                 "url" => ['/log/index'],
                                                 "icon" => "bug",
                                             ],
+                                            [
+                                                "label" => \Yii::t('app-model', 'Queue Manager'),
+                                                "url" => ['/queuemanager/default/index'],
+                                                "icon" => "tasks",
+                                            ],
                                         ],
                                     ],
                                 ],
