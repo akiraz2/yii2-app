@@ -1,4 +1,4 @@
-# Yii2 App
+# Yii2 Fast Simple Advanced App
 
 Yii2-app is Fast and Ready-to-production advanced project template.
 
@@ -9,8 +9,8 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
 * Admin template: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
 * Yii2 User: [dektrium/yii2-user](https://github.com/dektrium/yii2-user) (login `adminus`, password `adminus`)
 * Frontend and Backend User Controllers are filtered (by `dektrium/yii2-user`)
-* Redis cache
-* Yii2 queue (DB table `queue`)
+* Redis cache (you may change to DB-cache, but dont forget apply migration)
+* Yii2 queue (DB table `queue`) with backend (`/queuemanager/default/index`) using [ignatenkovnikita/yii2-queuemanager](https://github.com/ignatenkovnikita/yii2-queuemanager)
 * Log DB Target with backend (`/log/index`)
 * **UrlManagerFrontend** for backend app (all url rules in file `frontend/config/urls.php`, hostInfo in `common/config/params.php`)
 * i18n translations in `common/messages` with config
