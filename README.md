@@ -11,8 +11,8 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
 * Admin template is beautiful and simple bootstrap, compatible with yii2 assets: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
 * Yii2 User is strong and proved user-module with many features: [dektrium/yii2-user](https://github.com/dektrium/yii2-user) (login `adminus`, password `adminus`)
 * Frontend and Backend User Controllers are filtered (by `dektrium/yii2-user`)
-* Redis cache is really fast (you may change to DB-cache, but don't forget apply migration `yii migrate --migrationPath=@yii/log/migrations/`)
-* Yii2 queue (DB table `queue`), but you can use *Redis-queue* or other
+* Redis cache is really fast (you may change to DB-cache, but don't forget [create table](https://www.yiiframework.com/doc/api/2.0/yii-caching-dbcache#$cacheTable-detail))
+* Yii2 queue (DB table `queue`), but you can use *Redis-queue* or other [yii2-queue docs](https://github.com/yiisoft/yii2-queue/blob/master/docs/guide/README.md)
 * Queue Manager with backend (`/queuemanager/default/index`) using [ignatenkovnikita/yii2-queuemanager](https://github.com/ignatenkovnikita/yii2-queuemanager)
 * Log DB Target with backend (`/log/index`) - simply view log messages 
 * .htaccess - config for **pretty urls** (rewrite index.php), *may be later add nginx config*
