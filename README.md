@@ -3,28 +3,33 @@
 Yii2-app is Fast and Ready-to-production advanced project template.
 
 Default, the template includes three tiers: `frontend`, `backend`, and `console`, each of which is a separate Yii application.
+
 > **NOTE:** Template is in initial development. Anything may change at any time. 
 
+
 ## Features
-* Admin template: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
-* Yii2 User: [dektrium/yii2-user](https://github.com/dektrium/yii2-user) (login `adminus`, password `adminus`)
+* Admin template is beautiful and simple bootstrap, compatible with yii2 assets: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
+* Yii2 User is strong and proved user-module with many features: [dektrium/yii2-user](https://github.com/dektrium/yii2-user) (login `adminus`, password `adminus`)
 * Frontend and Backend User Controllers are filtered (by `dektrium/yii2-user`)
-* Redis cache (you may change to DB-cache, but dont forget apply migration)
-* Yii2 queue (DB table `queue`) with backend (`/queuemanager/default/index`) using [ignatenkovnikita/yii2-queuemanager](https://github.com/ignatenkovnikita/yii2-queuemanager)
-* Log DB Target with backend (`/log/index`)
+* Redis cache is really fast (you may change to DB-cache, but don't forget apply migration `yii migrate --migrationPath=@yii/log/migrations/`)
+* Yii2 queue (DB table `queue`), but you can use *Redis-queue* or other
+* Queue Manager with backend (`/queuemanager/default/index`) using [ignatenkovnikita/yii2-queuemanager](https://github.com/ignatenkovnikita/yii2-queuemanager)
+* Log DB Target with backend (`/log/index`) - simply view log messages 
+* .htaccess - config for **pretty urls** (rewrite index.php), *may be later add nginx config*
 * **UrlManagerFrontend** for backend app (all url rules in file `frontend/config/urls.php`, hostInfo in `common/config/params.php`)
 * i18n translations in `common/messages` with config
 * ContactForm in frontend app is improved: [himiklab/yii2-recaptcha-widget](https://github.com/himiklab/yii2-recaptcha-widget),
  all email are saved to DB (`common/models/EmailForm` Model), optionally send message to Viber messenger via bot
-  (install requirements and config, uncomment code in Model)
-* **postcss** config
+  (install requirements [Bogdaan/viber-bot-php](https://github.com/Bogdaan/viber-bot-php) and config, uncomment code in Model)
+* **postcss** config (`frontend/web/src/pcss//*.css`)
+* Gii generator: added **yii2-queue**, may be later - [schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant) - really steroid, but in development with bugs
 
 
 ## Available modules
 These modules can be easy installed to Yii2-App using Composer:
 
 * Yii2 Super Blog Module (semantic, seo): [akiraz2/yii2-blog](https://github.com/akiraz2/yii2-blog)
-* Yii2 many web-statictic counters *(yandex, google, own db-counter)*: [akiraz2/yii2-stat](https://github.com/akiraz2/yii2-stat)
+* Yii2 many web-statictic counters (all-in-one) *(yandex, google, own db-counter)*: [akiraz2/yii2-stat](https://github.com/akiraz2/yii2-stat)
 * yii2 opengraph component: [dragonjet/yii2-opengraph](https://github.com/dragonjet/yii2-opengraph)
 * yii2 settings (db+cache): [yii2mod/yii2-settings](https://github.com/yii2mod/yii2-settings)
 * etc...
@@ -64,15 +69,12 @@ php yii message/extract common/messages/config.php
 
 **POSTCSS**
 
-```
-webstorm file-watcher
+Add WebStorm file-watcher, postcss.config.js is ready for use
+> **NOTE:** Dont forget install nodejs :) and run command `npm install`
+1. scope file[mites-site]:frontend/web/src/pcss//*.css
+2. program C:\Users\user4957\AppData\Roaming\npm\postcss.cmd
+3. arguments $ContentRoot$\frontend\web\css\style.css --config $ContentRoot$\post.config.js
 
-scope file[mites-site]:frontend/web/src/pcss//*.css
-
-program C:\Users\user4957\AppData\Roaming\npm\postcss.cmd
-
-arguments $ContentRoot$\frontend\web\css\style.css --config $ContentRoot$\post.config.js
-```
 
 ## Support
 

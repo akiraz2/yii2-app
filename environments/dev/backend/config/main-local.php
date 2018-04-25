@@ -19,6 +19,11 @@ if (!YII_ENV_TEST) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
+        'generators' => [
+            'job' => [
+                'class' => \yii\queue\gii\Generator::class,
+            ],
+        ],
     ];
 }
 
