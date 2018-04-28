@@ -22,7 +22,10 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
  all email are saved to DB (`common/models/EmailForm` Model), optionally send message to Viber messenger via bot
   (install requirements [Bogdaan/viber-bot-php](https://github.com/Bogdaan/viber-bot-php) and config, uncomment code in Model)
 * **postcss** config (`frontend/web/src/pcss//*.css`)
-* Gii generator: added **yii2-queue**, may be later - [schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant) - really steroid, but in development with bugs
+* Gii generator: 
+1. added **yii2-queue** Jobs generator 
+2. yii2 migration generator (from existing table) [Insolita/yii2-migrik](https://github.com/Insolita/yii2-migrik)
+3. may be later - [schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant) - really steroid, but in development with bugs
 
 
 ## Available modules
@@ -69,9 +72,10 @@ php yii message/extract common/messages/config.php
 
 **POSTCSS**
 
+> **NOTE:** Dont forget install nodejs :) and run command `npm install` if you want use post locally
+
 Add WebStorm file-watcher, postcss.config.js is ready for use
-> **NOTE:** Dont forget install nodejs :) and run command `npm install`
-1. scope file[mites-site]:frontend/web/src/pcss//*.css
+1. scope file[my-site]:frontend/web/src/pcss//*.css
 2. program C:\Users\user4957\AppData\Roaming\npm\postcss.cmd
 3. arguments $ContentRoot$\frontend\web\css\style.css --config $ContentRoot$\post.config.js
 
