@@ -2,6 +2,8 @@
 
 Yii2-app is Fast and Ready-to-production advanced project template.
 
+**PHP 7.1** because it is really fast.
+
 Default, the template includes three tiers: `frontend`, `backend`, and `console`, each of which is a separate Yii application.
 
 > **NOTE:** Template is in initial development. Anything may change at any time. 
