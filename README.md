@@ -2,7 +2,9 @@
 
 Yii2-app is Fast and Ready-to-production advanced project template.
 
-**PHP 7.1** because it is really fast.
+For you, I downgrade requirement to PHP v5.6. But **PHP 7.1** is better! because it is really fast.
+
+Please, [enable php intl extension](http://php.net/manual/en/intl.installation.php) for better work.
 
 Default, the template includes three tiers: `frontend`, `backend`, and `console`, each of which is a separate Yii application.
 
@@ -10,16 +12,16 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
 
 
 ## Features
-* Admin template is beautiful and simple bootstrap, compatible with yii2 assets: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
+* Gentelella Admin template is beautiful and simple bootstrap, compatible with yii2 assets: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
 * Yii2 User is strong and proved user-module with many features: [dektrium/yii2-user](https://github.com/dektrium/yii2-user) (login `adminus`, password `adminus`)
 * Frontend and Backend User Controllers are filtered (by `dektrium/yii2-user`)
-* Redis cache is really fast (you may change to DB-cache, but don't forget [create table](https://www.yiiframework.com/doc/api/2.0/yii-caching-dbcache#$cacheTable-detail))
+* DB cache, but I recommend Redis Cache - it is really fast
 * Yii2 queue (DB table `queue`), but you can use *Redis-queue* or other [yii2-queue docs](https://github.com/yiisoft/yii2-queue/blob/master/docs/guide/README.md)
 * Queue Manager with backend (`/queuemanager/default/index`) using [ignatenkovnikita/yii2-queuemanager](https://github.com/ignatenkovnikita/yii2-queuemanager)
 * Log DB Target with backend (`/log/index`) - simply view log messages 
 * .htaccess - config for **pretty urls** (rewrite index.php), *may be later add nginx config*
 * **UrlManagerFrontend** for backend app (all url rules in file `frontend/config/urls.php`, hostInfo in `common/config/params.php`)
-* i18n translations in `common/messages` with config
+* i18n translations in `common/messages` with config (current only English and Russian, language translation are welcome!)
 * ContactForm in frontend app is improved: [himiklab/yii2-recaptcha-widget](https://github.com/himiklab/yii2-recaptcha-widget),
  all email are saved to DB (`common/models/EmailForm` Model), optionally send message to Viber messenger via bot
   (install requirements [Bogdaan/viber-bot-php](https://github.com/Bogdaan/viber-bot-php) and config, uncomment code in Model)
@@ -27,7 +29,7 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
 * Gii generator: 
 1. added **yii2-queue** Jobs generator 
 2. yii2 migration generator (from existing table) [Insolita/yii2-migrik](https://github.com/Insolita/yii2-migrik)
-3. may be later - [schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant) - really steroid, but in development with bugs
+3. [schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant) - really steroid, but in development with bugs
 
 
 ## Available modules
@@ -66,6 +68,13 @@ Change in `common/config/main.php`
 ```
 'language' => 'ru-RU',
 'sourceLanguage' => 'en-US',
+```
+
+Add your language in `common/messages/config.php`
+```
+    'languages' => [
+        'ru-RU',
+    ],
 ```
 In shell 
 ```

@@ -1,6 +1,7 @@
 <?php
+$hostinfo = require 'params.php';
 return [
-    'language' => 'ru-RU',
+    'language' => 'en-US',
     'sourceLanguage' => 'en-US',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -15,18 +16,21 @@ return [
             'locale' => 'ru-RU',
             'thousandSeparator' => ' ',
             'decimalSeparator' => '.',
-            'numberFormatterOptions' => [
+            // must enable php intl extension for \NumberFormatter
+            /*'numberFormatterOptions' => [
                 \NumberFormatter::MIN_FRACTION_DIGITS => 0,
                 \NumberFormatter::MAX_FRACTION_DIGITS => 0,
-            ]
+            ]*/
         ],
         'cache' => [
-            'class' => \yii\redis\Cache::class,
+            'class' => yii\caching\DbCache::class,
+            'cacheTable' => '{{%cache}}',
+            /*'class' => \yii\redis\Cache::class,
             'redis' => [
                 'hostname' => 'localhost',
                 'port' => 6379,
                 'database' => 0,
-            ]
+            ]*/
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -41,7 +45,7 @@ return [
             'class' => \yii\web\UrlManager::class,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'hostInfo' => (require 'params.php')['frontendHost'],
+            'hostInfo' => $hostinfo['frontendHost'],
             'rules' => require __DIR__.'/../../frontend/config/urls.php',
         ],
         'i18n' => [
