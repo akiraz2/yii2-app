@@ -54,6 +54,13 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@common/messages',
                 ],
+                'giiant' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                ],
+                'cruds' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
             ],
         ],
         'queue' => [
