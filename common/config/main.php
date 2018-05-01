@@ -59,7 +59,7 @@ return [
                 ],
                 'cruds' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@common/messages',
+                    //'basePath' => '@common/messages',
                 ],
             ],
         ],
