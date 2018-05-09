@@ -59,8 +59,9 @@ php yii migrate --migrationPath=@yii/log/migrations/
 php yii migrate --migrationPath=vendor/ignatenkovnikita/yii2-queuemanager/migrations/
 php yii migrate/up
 ```
+### Web server config
 
-> **NOTE:** For newbies, I will recommend to read these instructions [/yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (Apache, nginx configurations, for example!)
+For newbies, I will recommend to read these instructions [yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (apache, nginx, etc\hosts
 
 ## Development
 
