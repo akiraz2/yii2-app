@@ -59,9 +59,21 @@ php yii migrate --migrationPath=@yii/log/migrations/
 php yii migrate --migrationPath=vendor/ignatenkovnikita/yii2-queuemanager/migrations/
 php yii migrate/up
 ```
+
+### First Steps
+
+1. You need to create default domain `site.ru` and admin sub-domain `backend.site.ru`, for example. `.htaccess` for apache in `web` folder, or see next chapter `web server config`
+2. Read docs of yii2-user module -https://github.com/dektrium/yii2-user/blob/master/docs/README.md
+2.1. for example - URL of Login and Registration - https://github.com/dektrium/yii2-user/blob/master/docs/available-actions.md
+2.2. Overriding models, views and controllers - also in docs!
+2.3. Need RBAC? ok, https://github.com/dektrium/yii2-rbac
+
+
+
 ### Web server config
 
-For newbies, I will recommend to read these instructions [yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (apache, nginx, etc\hosts
+For newbies, I will recommend to read these instructions [yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (apache, nginx, etc\hosts)
+
 
 ## Development
 
