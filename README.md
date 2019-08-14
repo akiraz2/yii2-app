@@ -2,6 +2,8 @@
 
 Yii2-app is Fast and Ready-to-production advanced project template.
 
+Dockerized, for development- mysql, nginx, php-fpm containers
+
 For you, I downgrade requirement to PHP v5.6. But **PHP 7.1** is better! because it is really fast.
 
 Please, [enable php intl extension](http://php.net/manual/en/intl.installation.php) for better work.
@@ -49,6 +51,23 @@ composer create-project --prefer-dist akiraz2/yii2-app my-site
 ```
 After installation run `init`
 
+## Docker
+Install yii2-app using [Docker](https://www.docker.com):
+
+0. copy `.env-dist` to `.env`, configure if needed
+1. run command to create project
+```
+docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
+  composer create-project --prefer-dist akiraz2/yii2-app my-site
+```
+2. copy `/mysql/docker-entrypoint-initdb.d/createdb.sql.example` to `createdb.sql`, then edit this file (database, user) from `docker-compose.yml` section db (MYSQL_USER: username, MYSQL_PASSWORD: password, MYSQL_DATABASE: dbname)
+3. `docker-compose build`
+4. `docker-compose up -d`
+5. `docker-compose exec php bash`, in terminal run `php init`, then run other migrations (see next)
+6. open localhost:8100 to test
+
 ### Migrations
 
 > **NOTE:** Make sure that you have properly configured `db` application component and run the following command
@@ -59,21 +78,9 @@ php yii migrate --migrationPath=@yii/log/migrations/
 php yii migrate --migrationPath=vendor/ignatenkovnikita/yii2-queuemanager/migrations/
 php yii migrate/up
 ```
-
-### First Steps
-
-1. You need to create default domain `site.ru` and admin sub-domain `backend.site.ru`, for example. `.htaccess` for apache in `web` folder, or see next chapter `web server config`
-2. Read docs of yii2-user module -https://github.com/dektrium/yii2-user/blob/master/docs/README.md
-2.1. for example - URL of Login and Registration - https://github.com/dektrium/yii2-user/blob/master/docs/available-actions.md
-2.2. Overriding models, views and controllers - also in docs!
-2.3. Need RBAC? ok, https://github.com/dektrium/yii2-rbac
-
-
-
 ### Web server config
 
-For newbies, I will recommend to read these instructions [yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (apache, nginx, etc\hosts)
-
+For newbies, I will recommend to read these instructions [yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (apache, nginx, etc\hosts
 
 ## Development
 

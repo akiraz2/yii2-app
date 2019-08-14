@@ -34,3 +34,4 @@ phpunit.phar
 # vagrant runtime
 /.vagrant
 /node_modules
+/mysql/data
