@@ -2,9 +2,7 @@
 
 Yii2-app is Fast and Ready-to-production advanced project template.
 
-Dockerized, for development- mysql, nginx, php-fpm containers
-
-For you, I downgrade requirement to PHP v5.6. But **PHP 7.1** is better! because it is really fast.
+Dockerized, for development (mysql, nginx, php-fpm)
 
 Please, [enable php intl extension](http://php.net/manual/en/intl.installation.php) for better work.
 
@@ -27,7 +25,6 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
 * ContactForm in frontend app is improved: [himiklab/yii2-recaptcha-widget](https://github.com/himiklab/yii2-recaptcha-widget),
  all email are saved to DB (`common/models/EmailForm` Model), optionally send message to Viber messenger via bot
   (install requirements [Bogdaan/viber-bot-php](https://github.com/Bogdaan/viber-bot-php) and config, uncomment code in Model)
-* **postcss** config (`frontend/web/src/pcss//*.css`)
 * Gii generator:
 1. added **yii2-queue** Jobs generator
 2. yii2 migration generator (from existing table) [Insolita/yii2-migrik](https://github.com/Insolita/yii2-migrik)
@@ -62,11 +59,13 @@ docker run --rm --interactive --tty \
   --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
   composer create-project --prefer-dist akiraz2/yii2-app my-site
 ```
-2. copy `/mysql/docker-entrypoint-initdb.d/createdb.sql.example` to `createdb.sql`, then edit this file (database, user) from `docker-compose.yml` section db (MYSQL_USER: username, MYSQL_PASSWORD: password, MYSQL_DATABASE: dbname)
+2. copy `/mysql/docker-entrypoint-initdb.d/createdb.sql.example` to `createdb.sql` if you have ready DB
 3. `docker-compose build`
 4. `docker-compose up -d`
 5. `docker-compose exec php bash`, in terminal run `php init`, then run other migrations (see next)
-6. open localhost:8100 to test
+6. open localhost:8100 to test (backend on localhost:8200)
+
+Access to Console App: `docker-compose exec php bash` and `php yii mycommand/action`
 
 ### Migrations
 
@@ -101,16 +100,6 @@ In shell
 ```
 php yii message/extract common/messages/config.php
 ```
-
-**POSTCSS**
-
-> **NOTE:** Dont forget install nodejs :) and run command `npm install` if you want use postcss locally
-
-Add WebStorm file-watcher, postcss.config.js is ready for use
-1. scope file[my-site]:frontend/web/src/pcss//*.css
-2. program C:\Users\user4957\AppData\Roaming\npm\postcss.cmd
-3. arguments $ContentRoot$\frontend\web\css\style.css --config $ContentRoot$\post.config.js
-
 
 ## Support
 

@@ -3,7 +3,8 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'pgsql:host=db;dbname=yii2advanced',
+//            'dsn' => 'pgsql:host=db;dbname=yii2advanced',
+            'dsn' => 'mysql:host=db;dbname=yii2advanced',
             'username' => 'username',
             'password' => 'password',
             'charset' => 'utf8',
