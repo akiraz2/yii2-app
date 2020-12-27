@@ -10,17 +10,17 @@ Please, [enable php intl extension](http://php.net/manual/en/intl.installation.p
 
 Default, the template includes three tiers: `frontend`, `backend`, and `console`, each of which is a separate Yii application.
 
-> **NOTE:** Template is in initial development. Anything may change at any time. 
+> **NOTE:** Template is in initial development. Anything may change at any time.
 
 
 ## Features
 * Gentelella Admin template is beautiful and simple bootstrap, compatible with yii2 assets: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
 * Yii2 User is strong and proved user-module with many features: [dektrium/yii2-user](https://github.com/dektrium/yii2-user) (login `adminus`, password `adminus`)
 * Frontend and Backend User Controllers are filtered (by `dektrium/yii2-user`)
-* DB cache, but I recommend Redis Cache - it is really fast
+* File or DB cache, but I recommend Redis Cache - it is really fast
 * Yii2 queue (DB table `queue`), but you can use *Redis-queue* or other [yii2-queue docs](https://github.com/yiisoft/yii2-queue/blob/master/docs/guide/README.md)
 * Queue Manager with backend (`/queuemanager/default/index`) using [ignatenkovnikita/yii2-queuemanager](https://github.com/ignatenkovnikita/yii2-queuemanager)
-* Log DB Target with backend (`/log/index`) - simply view log messages 
+* Log DB Target with backend (`/log/index`) - simply view log messages
 * .htaccess - config for **pretty urls** (rewrite index.php), *may be later add nginx config*
 * **UrlManagerFrontend** for backend app (all url rules in file `frontend/config/urls.php`, hostInfo in `common/config/params.php`)
 * i18n translations in `common/messages` with config (current only English and Russian, language translation are welcome!)
@@ -28,8 +28,8 @@ Default, the template includes three tiers: `frontend`, `backend`, and `console`
  all email are saved to DB (`common/models/EmailForm` Model), optionally send message to Viber messenger via bot
   (install requirements [Bogdaan/viber-bot-php](https://github.com/Bogdaan/viber-bot-php) and config, uncomment code in Model)
 * **postcss** config (`frontend/web/src/pcss//*.css`)
-* Gii generator: 
-1. added **yii2-queue** Jobs generator 
+* Gii generator:
+1. added **yii2-queue** Jobs generator
 2. yii2 migration generator (from existing table) [Insolita/yii2-migrik](https://github.com/Insolita/yii2-migrik)
 3. [schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant) - really steroid, but in development with bugs
 
@@ -97,14 +97,14 @@ Add your language in `common/messages/config.php`
         'ru-RU',
     ],
 ```
-In shell 
+In shell
 ```
 php yii message/extract common/messages/config.php
 ```
 
 **POSTCSS**
 
-> **NOTE:** Dont forget install nodejs :) and run command `npm install` if you want use post locally
+> **NOTE:** Dont forget install nodejs :) and run command `npm install` if you want use postcss locally
 
 Add WebStorm file-watcher, postcss.config.js is ready for use
 1. scope file[my-site]:frontend/web/src/pcss//*.css
@@ -128,4 +128,4 @@ I can apply patch, PR in 2-3 days! If not, please write me `akiraz@bk.ru`
 ## Licensing
 
 Yii2-App is released under the BSD License. See the bundled [LICENSE.md](LICENSE.md)
-for details. 
+for details.

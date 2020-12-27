@@ -35,3 +35,5 @@ phpunit.phar
 /.vagrant
 /node_modules
 /mysql/data
+
+.env

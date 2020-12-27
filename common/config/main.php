@@ -23,8 +23,9 @@ return [
             ]*/
         ],
         'cache' => [
-            'class' => yii\caching\DbCache::class,
-            'cacheTable' => '{{%cache}}',
+            'class' => yii\caching\FileCache::class,
+//            'class' => yii\caching\DbCache::class,
+//            'cacheTable' => '{{%cache}}',
             /*'class' => \yii\redis\Cache::class,
             'redis' => [
                 'hostname' => 'localhost',
@@ -64,15 +65,19 @@ return [
             ],
         ],
         'queue' => [
-            'class' => \yii\queue\db\Queue::class,
-            'db' => 'db', // DB connection component or its config
-            'tableName' => '{{%queue}}', // Table name
-            'channel' => 'default', // Queue channel key
-            'mutex' => \yii\mutex\MysqlMutex::class, // Mutex used to sync queries
-            'as log' => \yii\queue\LogBehavior::class,
-            'as quuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
-            // Other driver options
+            'class' => \yii\queue\sync\Queue::class,
+            'handle' => false, // whether tasks should be executed immediately
         ],
+//        'queue' => [
+//            'class' => \yii\queue\db\Queue::class,
+//            'db' => 'db', // DB connection component or its config
+//            'tableName' => '{{%queue}}', // Table name
+//            'channel' => 'default', // Queue channel key
+//            'mutex' => \yii\mutex\MysqlMutex::class, // Mutex used to sync queries
+//            'as log' => \yii\queue\LogBehavior::class,
+//            'as quuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
+//            // Other driver options
+//        ],
     ],
     'modules' => [
         'user' => [

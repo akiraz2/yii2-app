@@ -6,9 +6,11 @@ services:
       context: 'nginx'
     ports:
       - '8100:80'
+      - '8200:81'
     volumes:
       # Application testing
       - ./frontend/web:/app/frontend/web:delegated
+      - ./backend/web:/app/backend/web:delegated
   php:
     build:
       dockerfile: Dockerfile-${DOCKERFILE_FLAVOUR}
@@ -26,13 +28,24 @@ services:
       - ~/.composer/cache:/root/.composer/cache:delegated
     links:
       - db
+#  db:
+#    image: mysql:5.7
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_USER: username
+#      MYSQL_PASSWORD: password
+#      MYSQL_DATABASE: yii2advanced
+#      volumes:
+#        - ./mysql/data:/var/lib/mysql
+#        - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
   db:
-    image: mysql:5.7
+    image: postgres:13-alpine
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: username
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: dbname
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: yii2advanced
     volumes:
-      - ./mysql/data:/var/lib/mysql
+      - ./mysql/data:/var/lib/postgresql/data
       - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d

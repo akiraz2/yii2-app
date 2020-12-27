@@ -5,20 +5,13 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `email_form`.
  */
-class m180422_170849_create_email_form_table extends Migration
+class m180422_170849_create_email_form_table extends \dektrium\user\migrations\Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $tableOptions = null;
-
-        if ($this->db->driverName === 'mysql') {
-            // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
-            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
-        }
-
         $this->createTable('{{%email_form}}', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(11),
@@ -32,7 +25,7 @@ class m180422_170849_create_email_form_table extends Migration
             'created_at' => $this->timestamp(),
             'status_text' => $this->text(),
             'send_at' => $this->dateTime()
-        ], $tableOptions);
+        ], $this->tableOptions);
     }
 
     /**
