@@ -51,19 +51,19 @@ After installation run `init`
 ## Docker
 Install yii2-app using [Docker](https://www.docker.com):
 
-0. copy `.env-dist` to `.env`, configure if needed
-1. run command to create project
+0. run command to create project
 ```
 docker run --rm --interactive --tty \
   --volume $PWD:/app \
   --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
   composer create-project --prefer-dist akiraz2/yii2-app my-site
 ```
-2. copy `/mysql/docker-entrypoint-initdb.d/createdb.sql.example` to `createdb.sql` if you have ready DB
-3. `docker-compose build`
+1. copy `.env-dist` to `.env`, configure if needed
+2. copy `/mysql/docker-entrypoint-initdb.d/createdb.sql.example` to `createdb.sql` if you have ready DB (so dont run migrations)
+3. `docker-compose build` (you can configure Docker PHP in /php/Dockerfile-debian before building, for example, add mongodb)
 4. `docker-compose up -d`
-5. `docker-compose exec php bash`, in terminal run `php init`, then run other migrations (see next)
-6. open localhost:8100 to test (backend on localhost:8200)
+5. `docker-compose exec php bash`, in terminal run `composer install`, then `php init`, then run other migrations (see next)
+6. open [http://localhost:8100](http://localhost:8100) to test frontend (backend is on [http://localhost:8200](localhost:8200))
 
 Access to Console App: `docker-compose exec php bash` and `php yii mycommand/action`
 
@@ -77,9 +77,14 @@ php yii migrate --migrationPath=@yii/log/migrations/
 php yii migrate --migrationPath=vendor/ignatenkovnikita/yii2-queuemanager/migrations/
 php yii migrate/up
 ```
+
+### Default User Credentials
+login: `adminus`
+password: `adminus`
+
 ### Web server config
 
-For newbies, I will recommend to read these instructions [yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (apache, nginx, etc\hosts
+For newbies, I will recommend reading these instructions [yiisoft/yii2-app-advanced/start-installation.md](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md) (apache, nginx, etc\hosts
 
 ## Development
 

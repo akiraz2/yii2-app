@@ -30,6 +30,7 @@ RUN apt-get update && \
             default-mysql-client \
             openssh-client \
             nano \
+            mc \
             unzip \
             libcurl4-openssl-dev \
             libssl-dev \
@@ -60,11 +61,11 @@ RUN docker-php-ext-configure gd \
 # Install PECL extensions
 # see http://stackoverflow.com/a/8154466/291573) for usage of `printf`
 RUN printf "\n" | pecl install \
-        imagick \
-        mongodb && \
+        imagick  && \
+        #mongodb && \
     docker-php-ext-enable \
-        imagick \
-        mongodb
+        imagick
+        #mongodb
 
 # Check if Xdebug extension need to be compiled
 RUN cd /tmp && \
