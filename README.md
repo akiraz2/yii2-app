@@ -58,7 +58,7 @@ docker run --rm --interactive --tty \
   --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
   composer create-project --prefer-dist akiraz2/yii2-app my-site
 ```
-1. copy `.env-dist` to `.env`, configure if needed
+1. copy `.env-dist` to `.env`, configure if needed. You can change DB from mysql to postgresql - just change docker-compose.yml (and common/config/main-local.php after init)
 2. copy `/mysql/docker-entrypoint-initdb.d/createdb.sql.example` to `createdb.sql` if you have ready DB (so dont run migrations)
 3. `docker-compose build` (you can configure Docker PHP in /php/Dockerfile-debian before building, for example, add mongodb)
 4. `docker-compose up -d`

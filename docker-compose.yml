@@ -38,16 +38,15 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: yii2advanced
     volumes:
-      - ./mysql/data:/var/lib/mysql
-      - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./db/data:/var/lib/mysql
+      - ./db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
 
 #  db:
 #    image: postgres:13-alpine
 #    environment:
-#      MYSQL_ROOT_PASSWORD: root
 #      POSTGRES_USER: username
 #      POSTGRES_PASSWORD: password
 #      POSTGRES_DB: yii2advanced
 #    volumes:
-#      - ./mysql/data:/var/lib/postgresql/data
-#      - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+#      - ./db/data:/var/lib/postgresql/data
+#      - ./db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
